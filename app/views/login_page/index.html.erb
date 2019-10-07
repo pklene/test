@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spike</title>
+
+  <style>
+    .text-field {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <section>
+    <div id="flash">
+    </div>
+    <div id="clearance" class="sign-in">
+      <h2>Sign in</h2>
+
+      <form action="/session" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="7pJqZVhEEX5j6uFm8odzV8eT/1tFTto4An8qjFyBlOVwYfnSvgPfh5XlIBvhINw7x1uRA6pNY1BZyZdfABdeyQ==" />
+        <div align="center" class="text-field">
+          <label for="session_email">Email</label>
+          <input type="email" name="session[email]" id="session_email" />
+        </div>
+
+        <div class="password-field">
+          <label for="session_password">Password</label>
+          <input type="password" name="session[password]" id="session_password" />
+        </div>
+
+        <div class="submit-field">
+          <input type="submit" name="commit" value="Sign in" data-disable-with="Sign in" />
+        </div>
+
+        <div class="other-links">
+          <a href="/sign_up">Sign up</a>
+        </div>
+      </form>
+
+    </div>
+
+  </section>
+</body>
+</html>

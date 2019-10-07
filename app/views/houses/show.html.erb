@@ -1,0 +1,27 @@
+<style>
+    .show-house {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .return-link{
+      margin-left: 20px;
+    }
+</style>
+
+<%= link_to ("Return to homepage"), root_path, class: "return-link" %>
+
+<div class="show-house">
+
+  <%= image_tag @house.image.url(:medium) %>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @house.description %>
+  </p>
+
+  <p>
+    <strong>Monthly Rent:</strong>
+    <%= @house.monthly_rent %>
+  </p>
+
+</div>

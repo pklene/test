@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Welcome Page</title>
+  <style>
+    html{
+      background-image: radial-gradient(#FFFFFF, #808285, #d1d3d4);
+    }
+    body{
+
+    }
+    h1 {
+      text-align: center;
+      font-size: 75px;
+      color: #c2011b;
+    }
+    a{
+      color: black;
+      padding: 30px;
+      font-size: 40px;
+      border-style: solid;
+      margin-left: 30px;
+    }
+    div{
+      margin-top: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Welcome to MyRoommate Finder!</h1>
+
+  <div style="text-align: center">
+    <%= link_to 'Login', sign_in_path %>
+    <%= link_to 'Create Account', sign_up_path %>
+    <%= link_to 'Listing of All Houses', controller: 'houses' %>
+    <% if signed_in? %>
+    <div><%= link_to 'Add House to Listing', new_house_path %></div>
+    <% end %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<style>
+  h1{
+    text-align: center;
+    margin-top: 100px;
+  }
+  a {
+    color: black;
+  }
+  label{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 1.3em;
+  }
+</style>
+
+<%= link_to ("Return to homepage"), root_path, {:style=>'margin-left:20px'} %>
+
+<div class="profile-page">
+  <h1><u> Profile Information </u></h1>
+  <div><label>Email: <%= current_user.email %> </label></div>
+
+</div>

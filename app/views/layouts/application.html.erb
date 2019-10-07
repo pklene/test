@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spike</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    html{
+      background-image: radial-gradient(#FFFFFF, #808285, #d1d3d4);
+      background-repeat: no-repeat;
+      height: 100%;
+     }
+     h3{
+       color: black;
+       margin-left: 20px;
+      }
+      a.profile_link{
+        padding: 0px;
+        font-size: 20px;
+        border-style: none;
+        margin-left: 0px;
+        text-decoration: none;
+      }
+      .sign_out_button {
+        margin-top: 20px;
+      }
+      a:hover{
+        color: blue;
+      }
+  </style>
+</head>
+
+<body>
+  <header>
+    <% if signed_in? %>
+      <h3>User Signed On: <%= current_user.email %><h3>
+      <%= link_to 'My Profile', profile_index_path, :class => "profile_link" %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete, :class => "sign_out_button" %>
+    <% else %>
+      <h3>Unregistered User<h3>
+    <% end %>
+  </header>
+
+  <section>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </section>
+</body>
+</html>

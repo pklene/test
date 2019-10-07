@@ -1,0 +1,54 @@
+<style>
+  .new-house {
+    text-align: center;
+
+  }
+  .return-link{
+    margin-left: 20px;
+  }
+</style>
+<%= link_to ("Return to homepage"), root_path, class: "return-link" %>
+
+<div class="new-house">
+<h1>Add New House</h1>
+<%= form_for @house, html: { multipart: true } do |form| %>
+
+<%= form.hidden_field :owner, required: true, value:current_user.email  %>
+
+
+<p>
+  <%= form.label :image %><br><br>
+  <%= form.file_field :image %>
+</p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.label :monthly_rent %><br>
+    <%= form.text_area :monthly_rent %>
+  </p>
+
+  <p>
+    <%= form.label :num_rooms %><br>
+    <%= form.text_area :num_rooms %>
+  </p>
+
+  <p>
+    <%= form.label :num_bathrooms %><br>
+    <%= form.text_area :num_bathrooms %>
+  </p>
+
+  <p>
+    <%= form.label :pets %><br>
+    <%= form.text_field :pets %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+</div>

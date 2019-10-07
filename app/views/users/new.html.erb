@@ -1,0 +1,45 @@
+<style>
+  #clearance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 75vh;
+  }
+  .text-field {
+    margin: 20px;
+  }
+  .password-field {
+    margin: 30px;
+    padding-right: 20px;
+  }
+
+  .submit-field {
+    margin-bottom: 20px;
+  }
+  .other-links {
+    text-align: center;
+  }
+  .homepage-field{
+    margin-top: 20px;
+  }
+
+</style>
+
+<div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
+
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+      <%= link_to ("Return to Homepage"), root_path, {:style=>'margin-left:20px'} %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,52 @@
+<style>
+  #clearance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 75vh;
+  }
+  .text-field {
+    margin: 20px;
+  }
+  .password-field {
+    margin: 30px;
+    padding-right: 20px;
+  }
+
+  .submit-field {
+    margin-bottom: 20px;
+  }
+  .other-links {
+    text-align: center;
+  }
+  .homepage-field{
+    margin-top: 20px;
+  }
+
+</style>
+
+    <%= form_for :session, url: session_path do |form| %>
+      <div class="text-field">
+        <%= form.label :email %>
+        <%= form.text_field :email, type: 'email' %>
+      </div>
+
+      <div class="password-field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+
+      <div class="submit-field">
+        <%= form.submit %>
+      </div>
+
+      <div class="other-links">
+        <% if Clearance.configuration.allow_sign_up? %>
+          <%= link_to t(".sign_up"), sign_up_path, {:style=>'margin-right:20px'} %>
+        <% end %>
+        <%= link_to t(".forgot_password"), new_password_path, {:style=>'margin-right:20px'} %>
+        <%= link_to ("Return to homepage"), root_path, {:style=>'margin-right:20px'} %>
+      </div>
+    <% end %>
